@@ -7,6 +7,10 @@ amf:
   addr: ${AMF_ADDR}                  # The address or hostname of the AMF.
   bind_addr: ${AMF_BIND_ADDR}             # A local IP that the gNB binds to for traffic from the AMF.
 
+pdsch:
+    min_ue_mcs: {{ .Values.config.pdsch.min_ue_mcs }}  # Optional UINT (0). Sets a minimum PDSCH MCS value to be used for all UEs. Supported: [0 - 28].
+    max_ue_mcs: {{ .Values.config.pdsch.max_ue_mcs }}  # Optional UINT (28). Sets a maximum PDSCH MCS value to be used for all UEs. Supported: [0 - 28].
+
 ru_sdr:
   device_driver: {{ .Values.config.ru_sdr.device_driver }}                                               # The RF driver name.
   device_args: {{ .Values.config.ru_sdr.device_args }}     # Optionally pass arguments to the selected RF driver.
