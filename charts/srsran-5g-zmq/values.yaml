@@ -88,6 +88,10 @@ config:
     hostname: open5gs-amf-ngap
     bind_interface: eth0
 
+  pdsch:
+    min_ue_mcs: 0                           # Optional UINT (0). Sets a minimum PDSCH MCS value to be used for all UEs. Supported: [0 - 28].
+    max_ue_mcs: 28                          # Optional UINT (28). Sets a maximum PDSCH MCS value to be used for all UEs. Supported: [0 - 28].
+
   ru_sdr:
     device_driver: zmq
     device_args: tx_port=tcp://127.0.0.1:2000,rx_port=tcp://127.0.0.1:2001,id=gnb,base_srate=23.04e6
